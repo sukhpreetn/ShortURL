@@ -1,0 +1,40 @@
+{% block styles %}
+
+<style>
+
+body {
+      background-color: #8c9c76;
+     }
+
+.btn-link {
+      color: #50dfec;
+      text-shadow: none;
+    }
+    .btn-link:hover {
+      color: #000000;
+    }
+</style>
+
+{% endblock styles %}
+{% block content %}
+
+<h1 class="cover-heading">{{ title }}</h1>
+    <p class='lead'><h1>Shorten that URL</h1></p>
+<p class="lead">
+     <div class='col-sm-6 col-sm-offset-3'>
+                <form method='POST' action='.'> {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class='btn btn-primary' type='submit' value='Shorten &raquo;' >
+                    <br></br>
+                    <p><i>Click below to check the stats of all shortened URLs</i></p>
+                    <li><a href="{% url 'Shortener:stats' %}">Statistics</a></li>
+                </form>
+
+
+            </div>
+</p>
+<h1>{{short_code}}</h1>
+<h1>{{newUrl}}</h1>
+
+
+{% endblock content %}

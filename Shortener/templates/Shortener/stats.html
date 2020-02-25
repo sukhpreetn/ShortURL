@@ -1,0 +1,45 @@
+{% block styles %}
+
+<style>
+
+body {
+      background-color: #8c9c76;
+     }
+
+.btn-link {
+      color: #50dfec;
+      text-shadow: none;
+    }
+    .btn-link:hover {
+      color: #000000;
+    }
+</style>
+
+{% endblock styles %}
+{% block content %}
+
+<h1 class="cover-heading">{{ title }}</h1>
+    <p class='lead'><h4>URL Statistics</h4></p>
+    <a class='btn btn-default'  href='/'>Home</a>
+
+<table border="1" width="600">
+<tr>
+    <td><b>Long URL</b></td>
+    <td><b>Short Code</b></td>
+    <td><b>Created On</b></td>
+    <td><b>Active</b></td>
+</tr>
+
+
+{% for data in data %}
+<tr>
+    <td><a href='{{ data.url }}'>{{ data.url }}</a></td>
+    <td><a href= '/{{ data.shortcode }}'>{{ data.shortcode }}</a></td>
+    <td>{{ data.timestamp }}</td>
+    <td>{{ data.active }}</td>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock content %}

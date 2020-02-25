@@ -1,0 +1,25 @@
+
+<style>
+
+body {
+      background-color: #226890;
+     }
+
+</style>
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<div class=''>
+    <h1>Short code created!</h1>
+    <h4> URL:</h4>
+    <p>{{ url }}</p>
+    <h4>Short code created for this is </h4>
+    <p>{{ short_code }}</p>
+    <p></p>
+    <a class='btn btn-default'  href='/'>Home</a>
+    <a href="{% url 'Shortener:stats' %}">Statistics</a>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+
+<style>
+
+body {
+      background-color: #226890;
+     }
+
+</style>
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<div class=''>
+    <h1>Short codes already exists </h1>
+    <h4>Url:</h4>
+    <p>{{url}} </p>
+    <h4>Short Code:</h4>
+    <p>{{short_code}} </p>
+
+    <p><a class='btn btn-link'  href='{{ object.get_short_url }}'>{{ object.get_short_url }}</a></p>
+    <a class='btn btn-default' href='/'>Home</a>
+    <a href="{% url 'Shortener:stats' %}">Statistics</a>
+
+</div>
+{% endblock content %}
